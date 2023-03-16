@@ -1,0 +1,53 @@
+==============================================================================
+												Day 2
+==============================================================================
+Free Tier: 12 Months
+
+1. S3 - Storage - 5GB
+2. EC2 - Virtual Servers - 750 Hours/Month
+
+Pay-as-you-use
+
+Multi Factor Authentication:
+-------------------------------------------
+~ Additional layer of security to our AWS Account.
+
+Setting-up of MFA:
+---------------------------------
+Pre-requisite for assigning MFA
+	1. Google Playstore - Google Authenticator - Install
+
+How to Enable MFA:
+--------------------------------
+Click on Account Name - Security Credentials - Assign MFA Device - Open Authenticator App - Scan a QR Code - Scan the QR Code visible in AWS Console - A 6 digit code will be displayed in the Authenticator  App - Enter the 2 Codes which displayed consecutively
+
+Sign-out from AWS Account - Sign-in - Enter Email, Password, Enter the MFA Code (6 Digit Code) as seen on Authenticator App - AWS Console.
+
+How to Disable MFA:
+---------------------------------
+Click on Account Name - Security Credentials - Remove MFA
+Sign-out from AWS Account - Sign-in - Enter Email, Password - AWS Console
+
+AWS Budgets:
+-----------------------
+R&B - 1000 Cr. 2023
+~ With AWS Budgets we can define the maximum amount that we want to spend per month (100 USD)
+~ Once the allocated budget is about to reach then how to get the notification to your Email ID
+
+AWS Budgets - Create Budget - Custom Budget - Cost Budget - Name, Period, Enter the Budget, Create Notification Alert - Create Budget
+
+Total Fee:
+12000
+	AWS - 6000
+	DevOps - 6000
+
+
+
+
+
+
+
+
+
+
+

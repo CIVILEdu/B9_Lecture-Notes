@@ -1,0 +1,54 @@
+#####################################################################################
+											Day 3
+#####################################################################################
+Need for multiple accounts
+------------------------------------------
+~ AWS Organizations ----> Add an AWS Account ----> 
+
+TCS (Bangalore) ----> TCS (Hyderabad)
+
+Note: We can create a maximum of 10 sub-accounts from One Root Account
+
+
+AWS Global Infrastructure
+-----------------------------------------------
+~ AWS is Cloud Managed system
+~ AWS Global Infrastructure is divided into Regions
+~ Each Region is divided into AZs
+~ Each AZ consist of Data Centers
+~ Each Data Center consists of Servers/Infrastructure.
+~ Each AZ is inter-connected with each other.
+~ In India, we have 2 regions (Mumbai, Hyderabad)
+	~ ap-south-1 (ap-south-1a, ap-south-1b, ap-south-1c)
+~ Whenever you are working on AWS, it is better to work on the nearest region.
+
+ap-south-1 (Mumbai)	36 ms - EC2 Instance (1 Minute)
+us-east-1 (Virginia)		275 ms - EC2 Instance (3 Minutes)
+
+~ The oldest region in Asia Pacific is Singapore region
+	~ Whenever a new service is being planned to launch in AWS (Asia Pacific), in Singapore (2010) region it will be launched.
+
+~ N. Virginia is the first region in AWS - 2006
+~ Mumbai region was launched in 2016
+~ 29 Regions, 90+ AZs
+~ N. Virginia consists of 6 AZs (us-east-1a,us-east-1b,us-east-1c,us-east-1d,us-east-1e,us-east-1f)
+~ Osaca consists of only 1 AZ
+~ China is a dedicated region and it can be accessed only by Chinese Nationals.
+~ To maintain safety from Natural Disasters, AZs are placed at a minimum distance of 50-100km
+
+
+_____________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
