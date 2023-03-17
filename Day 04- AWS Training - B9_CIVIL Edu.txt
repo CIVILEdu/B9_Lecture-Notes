@@ -1,0 +1,93 @@
+#####################################################################################
+												Day 4
+#####################################################################################
+----------------------------------------------
+S3 - Simple Storage Service
+----------------------------------------------
+~ S3 is one of the Storage services available in AWS Cloud.
+
+~ S3 is the 2nd service that was launched by AWS, 2006 March 14.
+
+~ SQS - Simple Queue Service - First service launched in AWS - 2004.
+
+~ 4 Features of S3:
+		1. Scalability: There is no Storage limit (0 Bytes to PB)
+						5GB of data can be stored with Free tire account
+						Maximum size of one S3 bucket is 5TB
+						You can create 100 Buckets with Free tire account
+		
+		2. Availability: Once an Object is stored in the S3 Service, AWS will maintain 3 copies of the same 							file.
+					    In Mumbai Region, we have 3 AZs - 3 Copies of the same file will be stored in the 							backend of AWS Cloud.
+
+							One Object - 1 GB of size (3 Copies - 3 GB + 1 GB = 4 GB)
+						N. Vrigina - 6 AZs - 6 Copies of the same copies
+	
+		3. Internet Access: To access the data in the AWS Cloud, Internet Access is mandatory
+
+		4. Latency: 
+
+Working with Buckets and Objects:
+------------------------------------------------------
+Creation of S3 Bucket: AWS Account ----> S3 ----> Create Bucket (The Bucket Name should be globally unique and must not contain spaces or uppercase letters) 
+Note: S3 is a global service. It is not restricted to any region.
+
+ACL - Access Control List
+
+
+https://16-march-2023-demo.s3.ap-south-1.amazonaws.com/Travel+(2).png
+
+Making an Object public:
+-----------------------------------------------
+Steps to make an object public:
+
+1. ACLs Must be Enabled
+2. Block all public access (Uncheck - Off)
+3. Open Object ---> Object Actions ---> Make public using ACL
+
+Deleting a Bucket:
+-------------------------------
+Note: In order to delete a bucket, first all the objects inside the bucket must be deleted.
+
+
+Static Website Hosting:
+-----------------------------------
+~ We have two types of websites: 1. Static Website 2. Dynamic Website
+~ Static Website: thehindu.com
+~ When the website user interface doesnt change based on the user, then it is called as a static website.
+~ Dynamic Website: youtube.com 
+~ When the website user interface changes based on the user, then it is called as a dynamic website.
+
+Hosting a Static Website in S3 Bucket:
+------------------------------------------------------------
+~ html5freewebsitetemplatesdownload - To download the templates for static website
+
+Control + Shift + C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_____________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
