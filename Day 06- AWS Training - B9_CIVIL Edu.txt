@@ -1,0 +1,101 @@
+#####################################################################################
+												Day 6
+#####################################################################################
+==============================
+Accessing AWS using CLI
+==============================
+1. Download and Install CLI Tool using the link below:
+		https://awscli.amazonaws.com/AWSCLIV2.msi
+2. Create IAM User --- Give "S3 Full Access" Permission for the IAM User created.
+	IAM ----> Users ----> Add Users ----> Name: KastroIAMUser ----> Next ----> Set Permissions: We need 	to set "S3 Full Access" persmission ----> "Check" Attach Exisiting Policies Directly ----> Add 	"S3FullAccess" ----> Next ----> Create User
+3. Generate Access Key and Secret Key for the IAM User
+	Click on the IAM User created ----> Security Credentials ----> Create Access Key ----> "Check" 	CLI ----> Acknowledge and Click on Next ----> Create Access Key ----> Download the .csv file
+4. Before we work on CLI, we have to Configure the CLI		
+	Open Command Prompt ----> aws configure ----> Enter Access Key, Secret Access Key, Region, JSON
+5. Working with CLI 
+aws s3 ls ---- to list the buckets in s3
+aws s3 mb s3://bucket_name ---- to create a bucket
+aws s3 rb s3://bucket_name --force ---- to remove the bucket which consists of objects
+aws s3 rb s3://bucket_name ---- to remove an empty bucket
+aws s3 ls s3://bucket_name ---- to see the list of objects in a bucket
+aws s3 rm s3://bucket_name/object_name ---- to remove a file
+aws s3 cp "C:\Users\Lenovo\Documents\myapp.html" s3://bucket_name ---- Upload objects using CLI to S3
+
+==============================
+S3 Server Access Logging (SAL)
+==============================
+
+~ In a S3 Bucket, we will do multiple tasks such as Uploading the objects, Downloading the objects, Deleting the objects,.......
+~ By using SAL, we can track the activities that happened in a specific bucket
+~ This tracking helps to find where the files are uploaded, what is their source (IP), at what time, which AWS account, IAM User.............
+~ All the tracking related detailed can be collected and they can also be stored in a new bucket or also in the same bucket
+~ AWS suggests to store the tracking related details in a new bucket.
+~ The bucket which stores the tracking details is called as LOG BUCKET.
+
+
+Demo:
+-------------
+Create 2 Buckets (Activity Bucket, Log Bucket)
+Note: For whichever bucket you want to track the details, for that bucket we have to enable SAL (Open Bucket ----> Properties -----> Enable SAL by clicking on Edit
+Note: Make sure both buckets must be in the same region.
+
+Upload an object into the activity and then after 5-10 minutes you can see the tracking details in another bucket.
+
+Open Log Bucket ----> Permissions ----> Copy the Canonical ID
+Open Log Bucket ----> Open any one object ----> Control + F ----> Paste the Canonical ID ----> You will see the Log details
+
+==============================
+S3 Transfer Acceleration
+==============================
+~ To upload/download the objects in short time, we will enable Transfer Acceleration for a bucket
+
+Note: For a bucket, when Transfer Acceleration is enabled, the charges are applicable.
+
+Demo:
+-----------
+Open the Bucket ----> Properties ----> Transfer Acceleration ----> Edit ----> Enable ----> Save Changes
+
+==============================
+Inventory Configurations
+==============================
+To store 1000s of files we will use S3 Inventory Configuration feature.
+
+Open any bucket ----> Management ----> Inventory Configuration ----> Create Inventory Configurations ----> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+_____________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+

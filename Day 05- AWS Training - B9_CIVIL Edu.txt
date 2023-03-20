@@ -1,0 +1,52 @@
+#####################################################################################
+												Day 4
+#####################################################################################
+===============================
+Copying files from one bucket to another:
+===============================
+Pre-requisites:
+1. Make sure both (Source Bucket and Destination Bucket) the buckets are available in Same Region.
+2. In order to transfer the files from one bucket to another bucket, we are going to use a service called 
+"AWS Data Sync"
+3. IAM Role
+Tasks:
+-------------
+1. Create 2 Buckets (Source Bucket, Destination Bucket)
+	- Make sure to create both buckets in the same region.
+2. Upload 2 or more files into the source bucket.
+3. Search for "Data Sync" ----> Create Task and Configure the appropriate settings
+	Execution status: SUCCESS (After 2-5 minutes)
+4. Go to Destination Bucket and check whether the files are copied from Source Bucket or not.
+
+====================
+S3 Requester Pays
+====================
+Create Bucket ----> Properties ----> Requester Pays (Enable) ----> Save Changes
+
+Glacier - 10 PDF - 100 MB ----> Compress (ZIP File) - 70 MB - 100 Rs - 5 Minutes to 12 Hours
+GDA - 10 PDF - 100 MB ----> Deep Compress (ZIP File) - 40 MB 
+
+FY 22-23 ----> Finance Related Documents will be verified - Glacier or GDA - 90, 180 Days
+May 23 - Inspection
+
+
+
+
+
+
+
+_____________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
