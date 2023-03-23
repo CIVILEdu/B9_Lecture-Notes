@@ -1,0 +1,66 @@
+#####################################################################################
+												Day 9
+#####################################################################################
+======================
+AWS S3 Versioning
+======================
+File name: versioningdemo.txt
+
+1st time uploading - AWS - 20:22:19
+
+Upload another file with same name and different data
+2nd time uploading - GCP - 20:25:08
+The file which was uploaded at the first time is now replaced with the file that is uploaded the second time.
+Data Deletion and Over-writing of existing data has happened
+NULL --- version ID
+
+Enable versioning for the bucket
+Open Bucket ---->Properties ----> Bucket Versioning ----> Edit  ----> Enable Versioning ----> Save Changes
+You will  be able to see the "Show Versions" Toogle Bar
+
+3rd time uploading - DevOps - 20:35:11 - versioning enabled
+he5oSW.4sQQUlBCa6FL8zvGNWKqFsgi. --- Version ID
+Delete
+
+
+
+4th time uploading - Welcome to CIVIL Edu - 20:40:47- versioning enabled
+0dgfvCRdaln6VYpLoXDoAy_o.d07MldJ --- Version ID
+
+MFA Delete
+
+If you want  to protect the from accidental deletions, you can enable MFA Delete option.
+MFA delete will work only by using CLI, SDK, API
+
+
+5th time uploading - AWS & DevOps Training Batch 9 - 21:05:14
+
+6th time uploading - Kubernetes and Terraform New Batch Starts from 10 April, 2023 - 21:07:18
+Over writting and Data Deletion will happen
+
+
+
+
+
+
+
+
+
+
+
+
+_____________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,155 @@
+#####################################################################################
+												Day 10
+#####################################################################################
+=====================================
+Recovering Deleted Objects from S3 Bucket
+=====================================
+There are two pre-requisites that can be followed in order to recover the deleted objects:
+1. Enable Versioning
+2. Enable the Show Versions, and you can see the file with Delete Marker tag
+
+Tasks:
+-----------
+1. Create a bucket and Enable Versioning
+2. Upload 1 or 2 objects
+3. Delete the Object from S3 Console
+4. Enable the "Show Versions" toogle bar
+	You can see a file with "delete marker" tag
+5. Select the file which is having "delete marker" tag and Delete that file
+6. Disable the "Show Versions" toogle bar and you will be able to see the deleted object
+
+======================
+AWS S3 MFA Delete
+======================
+MFA - Multi Factor Authentication
+
+~ If you dont want to give the permission to delete an object, we can Enable MFA Delete Option.
+~ MFA Delete can be enabled by using CLI or SDK or API
+~ MFA Delete cannot be enabled/disabled by using AWS Console
+~ By default, MFA Delete will be Disabled.
+~ The bucket must have the Versioning Enabled
+~ MFA Delete will work at Bucket Level
+
+How to enable and disable MFA Delete using CLI
+----------------------------------------------------------------------
+Tasks:
+----------
+1. Create a bucket by enabling the versioning
+2. Check for the MFA Delete default state
+	Open Bucket ----> Properties ----> MFA Delete ---->Disabled
+3. Upload an object
+4. Activate MFA in IAM Service
+		Click on Account Name  ----> Security Credentials ----> Assign MFA ----> Scan the QR Code ----> 			Enter the 2 consecutive Codes visibile in Google Authenticator App
+
+		arn:aws:iam::374915553631:mfa/amazon-aws
+
+5. Create Access Key and Secret Access Key
+		IAM Console  ----> Create Access Key ----> Create Access Key
+		AKIAVOSVVLFPS4WZ447B
+		qmATTV5y5tZ0PkEQQ2LFkyQlT9TZhYuU2y6rN9Cv
+
+6. Open Command Prompt
+	
+	6.1 Create a profile
+			aws configure --profile civiledu
+	6.2 Enter Access Key and Secret Access Key
+	6.3 Lets Enable MFA Delete
+			aws s3api put-bucket-versioning --bucket mfa-demo-23mar --versioning-configuration Status=Enabled,MFADelete=Enabled --mfa "arn:aws:iam::374915553631:mfa/amazon-aws mfa-code" --profile civiledu
+	6.4 Verify whether the MFA Delete is Enabled or Not
+			Open Bucket ----> Properties ----> You can see MFA Delete - Enabled
+
+7. Go to the Bucket and delete a file
+	Select the object and delete it
+	The object will get deleted
+	Enable Show Versions Toogle Bar
+	Select the file which is not having "delete marker" tag and delete that file
+		You will not be able to delete that file
+
+8. Disabling the MFA Delete
+		aws s3api put-bucket-versioning --bucket mfa-demo-23mar --versioning-configuration Status=Enabled,MFADelete=Disabled --mfa "arn:aws:iam::374915553631:mfa/amazon-aws mfa-code mfa-code" --profile civiledu
+
+Note: CLI has to be installed in your PC
+
+======================
+AWS S3 Object Lock
+======================
+~ S3 Object Lock will help you to prevent objects from being deleted or over-written for a fixed amount of time or indefinitely.
+
+~ Extra layer of protection for our objects.
+
+Features S3 Object Lock:
+-----------------------------------------
+1. Retention Mode
+	1.1 Governance Mode
+			Whenever you are going to enable the S3 Object Lock using Governance Mode, users cannot 				over-write or delete an object, until or unless they have the special permissions.
+			
+			Only Root User will have the permission to delete the object.
+
+	1.2 Compliance Mode
+			Whenever you are going to enable the S3 Object Lock using Compliance Mode, even the Root 				User also cannot be able delete an object
+
+
+2. Retention Period
+
+	Protects an object for a fixed amount of time.
+	Once after the retention period is completed, automatically the users (IAM User or Root User) can 		delete the objects.
+	In compliance mode, retention mode cant be changed and retention period cannot be shortned.
+
+
+3. Legal Holds
+
+	Independent of retention periods.
+
+Tasks:
+------------
+1. Create a bucket - Versioning Enabled
+	1.1 Advanced Settings ----> Object Lock -----> Enable ----> Create Bucket
+
+2. Upload 2 objects
+3. open an object ----> Properties ----> Object Lock Retention ----> Edit ----> Enable ----> 
+
+======================
+AWS S3 Replication Setup
+======================
+~ In S3 Bucket we can store multiple objects.
+
+~ To avoid the accidental deletion of objects or a bucket, if we want to maintain a duplicate files of all the orginal date then we can use Replication Setup
+
+Types of Replications:
+----------------------------------------
+Replication can be done in 3 ways:
+The duplciate copies can be stored in 3 ways:
+	1. Another bucket which is available in same region and same account
+	2. Another bucket which is avilable in different region and same account
+	3. Another bucket which is avilable in different account
+
+Suppose if main bucket is stored in standard storage class, the duplicates objects can be stored in different storage class also, inorder to avoid object storage charges.
+
+Tasks:
+-----------------
+1. Create 2 buckets with Versioning Enabled.
+2. For first bucket, we shall enable the Replication
+3. Open Bucket 1 ----> Management ----> Replication Rules ----> Create Replication Rule ----> Name: demorule ---->
+
+
+
+
+
+
+
+
+_____________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
