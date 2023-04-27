@@ -1,0 +1,36 @@
+=====================================================================
+										Day 2_DevOps_CIVIL Edu
+=====================================================================
+DevOps Tools Overview:
+-----------------------------------
+~ In order to make a collaborative approach/development for any project, we will have to integrate the IT Operations Team and the Development Team, we will use DevOps Culture. Inside the DevOps culture we will have to use multiple tools to complete a project.
+
+1. Build Tools: Ant, MAVEN, Gradle
+2. Repository Tools: GITHUB, Bit Bucket, SVN
+3. Code Review Tools: SONARQUBE, Sonar link, PMD
+4. Code Deployment Tools: JENKINS, UDeploy
+5. Configuration Tools: ANSIBLE, Chef
+6. Containarization Tools: DOCKER
+7. Orchestration Tool: K8S
+8. Monitoring Tools: NAGIOS, GRAPHANA, Prometheus, ELK
+9. Project Management Tool: JIRA
+
+Build and Deployment Process:
+-----------------------------------------
+
+
+DevOps Training: 30-35 Days
+Fee: 7000 Rs.
+9700712459 - PhonePe, Google Pay
+Please share the payment to the above number on WhatsApp
+Please share your email id
+
+From tomorrow's session, a separate meeting link till the end of DevOps Training
+
+
+
+
+
+
+
+

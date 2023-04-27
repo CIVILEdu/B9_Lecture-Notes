@@ -1,0 +1,105 @@
+#############################################################################################
+										DevOps - Day 3
+#############################################################################################
++++++++++++
+     LINUX
++++++++++++
+Operating System:
+----------------------------
+~ It is a software that is used to interact with the computer.
+~ It will act as a mediator b/w the users and the computer hardware.
+~ To run any computer, OS is mandatory.
+~ OS also provides an environment to run other applications.
+
+Types of OSs:
+--------------------------
+~ Windows
+~ Mac (Apple)
+~ Linux
+
+Windows OS: 
+-------------------------
+~ It is a single user based OS
+~ Paid s/w
+~ Developed by MICROSOFT
+~ Recommended for personal use
+~ It is a GUI (Graphic User Interface) based OS
+~ Less security features
+
+Linux OS:
+---------------------------
+~ It is a multi user based OS
+~ It is available for FREE of cost and it is opensource.
+~ Developed by Linus Torvalds (Minux)
+~ Recommended for Servers, DBs, Application execution.
+~ It is not a GUI based OS
+~ It is based on CLI (Command Line Interface)
+
+Linux Flavours/Distributions:
+----------------------------------------
+Redhat Linux
+Amazon Linux
+Ubuntu
+Cent OS
+Suse
+Debian
+Fedora
+
+How to work on Linux OS?
+-----------------------------------------
+~ We will be using AWS Cloud in order to work with the Linux OS.
+~ Instance is a virtual server in AWS Cloud.
+~ In AWS Cloud, we will launch an Instance (Server) which is based on Linux s/w and then we will work on Linux commands.
+
+How to launch a Amazon Linux Instance?
+--------------------------------------------------------
+Pre-requisite:
+++++++++++++++
+1. Create an AWS Account
+
+Steps to launch an Amazon Linux Instance
+-----------------------------------------------------------
+Login to AWS Account -----> Go to "EC2" Service -----> Launch an EC2 Instance -----> Connect to the instance using MobaXTerm s/w
+
+Download link for MobaXTerm s/w:
+https://mobaxterm.mobatek.net/download-home-edition.html
+
+How to connect to the instance using MobaXTerm s/w:
+----------------------------------------------------------------------------
+Open MobaXTerm s/w -----> Session -----> SSH -----> Remote Host: <paste the Public IPv4 address of Instance> -----> Advanced SSH Settings -----> "Check" use private key option -----> Click on "File" icon -----> Select the ".pem" file you have downloaded/created while launching the instance -----> OK -----> You will see "login as" -----> By default, the login username for all Linux based instances is "ec2-user" -----> You will see "EC2 Logo"
+
+-------------------------------------
+Linux Commands_Part 1
+-------------------------------------
+In linux everything will be represented in two ways:
+1. Normal files (Text files)
+2. Directories (Folders)
+
+
+1. To create a directory -----> mkdir <directoryname>
+2. To see the list of files/directories -----> ls -l (or) ls (or) ll
+3. To remove/delete a directory -----> rmdir <directoryname>
+4.  To know the present working directory -----> pwd 
+5. We have two types of users in Linux OS: 
+		1. ec2-user
+		2. root user
+	To know the user details  -----> whoami
+6. To change the directory (or) to go inside a particular directory -----> cd <directoryname>
+7. To go back to the previous directory -----> cd .. (to go one step backward)
+										cd ../.. (to go two steps backward)
+										cd ../../.. (to go three steps backward)
+8. To go to the next directory -----> cd <directoryname>/<directoryname>/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
