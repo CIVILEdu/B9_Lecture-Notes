@@ -1,0 +1,165 @@
+#############################################################################################
+										DevOps - Day 4
+#############################################################################################
++++++++++++
+     LINUX
++++++++++++
+How to work with files in Linux OS?
+--------------------------------------------------
+We can create the files in multiple ways (3 ways)
+1. touch
+2. cat
+3. vi
+
+To create an empty file ----> touch <filename>.txt
+
+How to create a file with content inside it?
+----------------------------------------------------------
+cat > <filename>
+
+How to see the content in a specific file?
+---------------------------------------------------------
+cat <filename>
+
+Note: 
+"touch" is used to create an empty file
+"cat"  is used to create a file and to create the content in the same file parallely
+To come out of a file -----> control + D
+
+How to write additional data in the existing file?
+----------------------------------------------------------------
+cat > <filename>
+
+How to maintain the old data in a file?
+----------------------------------------------------
+cat >> <filename>
+
+Note: If we give >, it will replace the old data with new data
+	If we give >>, it will append the data
+
+How to delete a file?
+------------------------------
+rm <filename>
+
+How to see the list of files from latest created to oldest created?
+--------------------------------------------------------------------------------
+ls -lt
+
+How to see the list of files from oldest created to latest created?
+--------------------------------------------------------------------------------
+ls -lr
+
+By default when we execute "ls -l" it will print the files in alphabetical order
+
+How to see the list of files in a specific directory, when you are not pointing to that directory?
+------------------------------------------------------------------------------------------------------------------------
+ls -l <directoryname>
+
+How to know whether it is a File or Directory?
+------------------------------------------------------------
+If you do "ls -l", if the line is starting with "d" then it is a directory.
+If you do "ls -l", if the line is starting with "-" then it is a file.
+
+How to delete an empty directory?
+---------------------------------------------
+rmdir <directoryname>
+
+How to delete a directory when there is a content inside it?
+-----------------------------------------------------------------------------------
+rm -r <directoryname>
+
+How to rename a file/directory?
+----------------------------------------
+mv <oldfilename> <newfilename>
+
+How to copy the content from one file to another file?
+-----------------------------------------------------------------------
+cat <file1name> > <file2name>
+Ex: cat kastro.txt > devops.txt
+
+Note: If "file2" is not available, it will create "file2" and then copies the content from "file1"
+
+How to copy the content from 2 files into the 3rd file?
+-----------------------------------------------------------------------
+Create a file with content inside it
+cat <file1name> <file2name> > <file3name>
+
+Note: If "file3" is not available, it will create "file3" and then copies the content from "file1" and "file2"
+
+How to create a copy of a specific file?
+----------------------------------------------------
+cp <file1name> <file2name>
+
+Note:
+"cp" is used only for one file
+"cat" can be used for multiple files and also one file
+
+How to move the files from one directory to another directory?
+----------------------------------------------------------------------------------
+mv <file1path> <file2path>
+
+
+How to see the content in a file in reverse order?
+---------------------------------------------------------------
+"cat" command will read the content from top to bottom
+"tac" command will read the content from bottom to top
+tac <filename>
+
+cat    1 2 3 4 5
+tac    5 4 3 2 1
+
+How to see only the first 10 lines in a file?
+--------------------------------------------------------
+head <filename>
+
+If you want to see the last 10 lines in a file
+tail <filename>
+
+Note: By default when we use "head" command, it will display the first 10 lines only
+		By default when we use "tail" command, it will display the last 10 lines only
+
+If you want to see only the first 3 lines
+head -n <enterno.oflinesyouwanttosee> <filename>
+
+If you want to see only the last 3 lines
+tail -n <enterno.oflinesyouwanttosee> <filename>
+
+If you want to know the word count in a file
+wc <filename>
+
+Ex: 15 15 36
+15 (Lines) 15 (Words) 36 (Characters)
+
+How to search for a word in a specific file available in Linux OS?
+-------------------------------------------------------------------------------------
+"GREP" command is used to search for a word in a specific file
+GREP - Global Regular Expression Print
+
+grep <'wordname'> <filename>
+
+Note: GREP command is case sensitive
+
+To ignore the case-sensitive in grep
+grep -i <'wordname'> <filename>
+
+if you want to search for a word in all the files available in a specific directory
+grep -i <'wordname'> *
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

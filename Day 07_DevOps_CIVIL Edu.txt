@@ -1,0 +1,82 @@
+#############################################################################################
+										DevOps - Day 7
+#############################################################################################
++++++++++++
+     MAVEN
++++++++++++
+~ The first tool which is used in any project is known as Build Tool.
+
+~ Using Build Tool, we will create the Project Folder Structure.
+
+~ The commonly used Build Tool in the market is MAVEN.
+
+~ We will also use the Maven to download the project dependencies.
+
+~ We will also use Build Tool to do the project compilation.
+
+~ In summary, using Maven we can create the Project Folder Structure, Download the Dependencies, Project Compilation, Unit Test Execution, and Package the Project.
+
+~ Maven is Free and Opensource software given by Apache organization.
+
+~ Maven is developed by using Java Programming Language.
+
+~ Maven is used to perform the build automation for Java Projects.
+
+Maven can be used for
+------------------------------------
+1. Using Maven we can create initial project folder structure.
+
+2. Using Maven we can download the project dependencies.
+
+House: Bricks (Cement, Sand, Gravel....)
+Application: JAVA (Frameworks: Spring, Spring Boot, Rest APIs, Hybernate, Microservices....)
+
+How Maven will understand what are the dependencies that are required to develop a project?
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~ In Maven project folder structure, there will be a file which is called as "pom.xml"
+
+~ In "pom.xml" we are going to configure the dependencies that are required to develop the project.
+
+~ POM - Project Object Model.
+
+~ "pom.xml" file will act an input file for Maven s/w.
+
+3. Using Maven we can compile the project source code.
+
+~ Whenever we are going to develop a project (app/website), we are going to use a programming language (JAVA) and then we will create a file with an extension known as ".java" (Filename: demo.java). All the .java files will have the project source code.
+~ Our ultimate goal is to execute the java projects.
+~ Whenever we write the java program can we directly get output of the project?
+	NO
+~ To execute the project, first we have to compile the project.
+ 
+~ Once the compilation is done for the project, it will generate the "Byte code" in a new file which is called as ".class" file (Filename: demo.class).
+
+~ Once the .class file is created, then we need to execute that code in order to get the output of our project.
+
+~ Whenever we execute a java program, that execution will be done by using a VM in Java which is called as JVM (Java Virtual Machine). This JVM will provide the output of our project.
+
+~ The process of converting the source code into the byte code is called as "Compilation." The compilation of code will be done by using Java Compiler.
+
+4. Using Maven we can Package the java project as a "jar" file or "war" file.
+
+jar - Java Archieve
+war - Web Archieve
+
+~ Standalone java applications will be executed using "jar" files.
+~ Java web applications will be executed using "war" files.
+
+Difference b/w the "Standalone java applications" and "Java web applications"
+--------------------------------------------------------------------------------------------------------
+A standalone application, also known as a desktop application is a software program designed in such a way that to run this software program, users don’t need an internet connection or any server access. Web-based applications need an internet connection, servers, and any additional resources to run but standalone applications do not require any additional resources such as an internet connection, server, etc.
+
+~ The process of keeping the "jar" or "war" file into the servers is called as "Deployment."
+
+~ Compiling the source code and packaging it is called as "Build Activity."
+
+~ We can do the automation of Project compilation and Project packaging using MAVEN s/w.
+
+_____________________________________________________________________________________________
+
+
+
+

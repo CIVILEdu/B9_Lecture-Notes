@@ -1,0 +1,166 @@
+#############################################################################################
+										DevOps - Day 5
+#############################################################################################
++++++++++++
+     LINUX
++++++++++++
+How to work with text editors in Linux OS?
+---------------------------------------------------------
+~ Text editors are used to edit the files.
+~ Default text editor in Linux is "vi" (Visual Editor)
+~ Default text editor in Windows is "Notepad"
+
+vi <filename>
+In order to enter the content inside the file, first press "i" in your keyboard to go to the insert mode
+Then write the content
+To save and exit from the file, :wq
+To close the file without saving the content, :q!
+
+SED (Stream Editor)
+-----------------------------
+~ To replace a word with another word, SED command is used.
+Syntax: sed 's/<replacedword>/<newword>/' <filename> (The data gets modified in the frontend only)
+sed -i 's/<replacedword>/<newword>/' <filename> (The original data in the original file will also change)
+
+How to delete a particular line without opening a file?
+---------------------------------------------------------------------
+sed <'3d'> <filename> (The data gets deleted in the frontend only)
+sed -i <'3d'> <filename> (The original data in the original file will also get deleted)
+To delete a last line in the file -----> sed '$d' <filename>
+To delete the content from a particular line to the last line -----> sed '<linenumber>,$d' <filename>
+Ex: sed '20,$d' <linux.txt> (It will delete the content from 20th line till the last lines)
+
+
+File permissions
+---------------------------
+There are 3 types of file permissions in linux:
+1. Read (r)
+2. Write (w)
+3. Execute (x)
+
+A file permission is divided into 3 sections/parts:
+1. User permissions (u)
+2. Group permissions (g)
+3. Others permissions (o)
+
+rw-rw-r-- 
+
+rwxrwxr-x
+	Users - rwx
+	Group - rwx
+	Others - r-x
+
+rw-rw-r--
+	Users - rw-
+	Group - rw-
+	Others - r--
+
+How to change the file permissions?
+--------------------------------------------------
+"chmod" command is used to modify the file permissions.
+
+chmod u+r (It will add read permission for user)
+chmod u+w (It will add write permission for user)
+chmod u+x (It will add execute permission for user)
+
+chmod g+r (It will add read permission for group)
+chmod g+w (It will add write permission for group)
+chmod g+x (It will add execute permission for group)
+
+chmod o+r (It will add read permission for others)
+chmod o+w (It will add write permission for others)
+chmod o+x (It will add execute permission for others)
+
+To add multiple permissions at a time:
+chmod u+rwx (It will add read, write and execute permissions for User)
+chmod g+rwx (It will add read, write and execute permissions for Group)
+chmod o+rwx (It will add read, write and execute permissions for Others)
+
+
+How to remove the permissions for a file?
+---------------------------------------------------------
+chmod u-r (It will remove read permission for user)
+chmod u-w (It will remove write permission for user)
+chmod u-x (It will remove execute permission for user)
+
+chmod g-r (It will remove read permission for group)
+chmod g-w (It will remove write permission for group)
+chmod g-x (It will remove execute permission for group)
+
+chmod o-r (It will remove read permission for others)
+chmod o-w (It will remove write permission for others)
+chmod o-x (It will remove execute permission for others)
+
+To remove multiple permissions at a time:
+chmod u-rwx (It will remove read, write and execute permissions for User)
+chmod g-rwx (It will remove read, write and execute permissions for Group)
+chmod o-rwx (It will remove read, write and execute permissions for Others)
+
+How to change the file permissions using numbers?
+-------------------------------------------------------------------
+
+0 ----> No permissions
+1 ----> Only Execute permission
+2 ----> Only Write permission
+3 ----> Execute and Write permissions
+4 ----> Only Read permissions
+5 ----> Read and Execute permissions
+6 ----> Read and Write permissions
+7 ----> Read, Write, Execute permissions
+
+How to work with user accounts in the Linux?
+-----------------------------------------------------------------------
+By default, linux machine will have two users
+	1. ec2-user ( will not have all kinds of permissions)
+	2. root user ( will have all kinds of permissions)
+
+How to switch from ec2-user to root user?
+---------------------------------------------------------
+sudo su
+
+To exit from root user: type exit
+
+To install any software in linux OS, we have to be a root user
+Without becoming root user also, we can install softwares by adding "sudo" at the beginning of a line
+
+How to create a custom users?
+----------------------------------------
+sudo useradd <username>
+To verify whether an user is added or not: id <username>
+
+Note: whenever an user is created in Linux OS, be default a home directory will be created on the same name
+
+How to create a group?
+------------------------------
+sudo groupadd <groupname>
+
+How to add an user to a group?
+-------------------------------------------
+sudo usermod -aG <groupname> <username>
+
+How to remove an user from a group?
+--------------------------------------------------
+sudo gpasswd -d <username> <groupname>
+
+How to see the list of users available?
+-------------------------------------------------
+cat /etc/passwd
+
+How to see last "n" number of users?
+----------------------------------------------
+tail -2 /etc/passwd
+
+How to see the list of users available in a particular group?
+--------------------------------------------------------------------------------
+sudo lid -g <groupname>
+
+
+
+
+
+
+
+
+
+
+

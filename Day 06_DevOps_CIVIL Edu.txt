@@ -1,0 +1,57 @@
+#############################################################################################
+										DevOps - Day 6
+#############################################################################################
++++++++++++
+     LINUX
++++++++++++
+How to set a password to an user?
+-----------------------------------------------------------
+sudo useradd <username>
+id <username>
+sudo passwd <username>
+Enter the password (While entering the password, we will not be able to see the password)
+
+How to switch from one user to another user?
+-----------------------------------------------------------
+sudo su -----> To switch to root user
+exit -----> To exit from root user
+sudo su <username> -----> To switch to the required user
+
+"chown" command
+----------------------------------
+~ It is used to change the file/directory ownership
+
+sudo chown <username> <filename>
+
+How to change the ownership of a file using user id?
+---------------------------------------------------------------------
+sudo chown <userid> <filename>
+
+How to find the user id of an user?
+-------------------------------------------------
+id <username>
+
+How to change the group of a file?
+--------------------------------------------------
+sudo chown :<groupname> <filename>
+
+cat /etc/group -----> To see the list of groups
+
+To see the IP address of our machine -----> ifconfig
+To download a file based on url -----> wget
+To send a request to an url -----> curl
+To check the network connectivity -----> ping
+
+To extract "tar" file -----> tar <filename>
+tar -xvf <filename>
+
+To extract a "zip" file -----> zip <filename>
+
+How to download softwares into Linux OS?
+----------------------------------------------------------
+If you want to download software in Linux, we need to be a root user
+
+sudo yum install git
+sudo yum install maven
+
+
