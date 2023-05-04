@@ -1,0 +1,87 @@
+########################################################################################
+										DevOps - Day 9
+########################################################################################
+MAVEN Terminology:
+-------------------------------------
+1. Archetype:
+	It represents what type of project we want to create.
+	Maven provides 1500+ types of archetypes.
+	maven-archetype-quickstart ----> It represents java standalone applications
+	maven-archetype-webapp ----> It represents java web applications
+
+2. Group ID: It represents the project name or company name. 
+
+3. Artifact ID: It represent the project name or module name.
+
+Ticket Booking Application - Project Name
+	Home
+	My orders
+	Ticket History
+	Cancellation History
+	Movies list
+
+4. Packaging: It represents how you want to package your application.
+				Any application can be packaged into 2 ways: jar file, war file
+				For standalone applications, "jar" file will get created.
+				For web applications, "war" file will get created.
+
+
+How to create standalone applications using Maven?
+----------------------------------------------------------------------------
+mvn archetype:generate -DgroupId=in.civiledu -DartifactId=01-Maven-CivilEdu -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+D-drive ----> Create a folder (Maven Practice-B9&10) ----> Open command prompt in that folder path ----> Copy and paste the above command to create the standalone application ----> You can see the maven folder structure
+
+Maven Project Folder Structure:
+------------------------------------------------
+01-Maven-CivilEdu
+	src
+		main: src/main/java/in/civiledu*/App.java ----> It contains application source code
+		
+		test: src/test/java/in/civiledu*/AppTest.java ----> It contains unit test (junit) code
+
+	pom.xml
+
+Open "pom.xml" file using either of the following:
+Notepad++
+vi code editior
+
+How to add the dependencies in the "pom.xml" file?
+------------------------------------------------------------------------
+To add the dependencies we will use a website which is called as "mvnrepository.com"
+
+How Maven will download the dependencies?
+---------------------------------------------------------------------
+
+
+
+
+
+_________________________________________________________________________________________
+								
+													By
+												Kastro Kiran V
+
+============================================
+How to create standalone application using Maven:
+============================================
+mvn archetype:generate -DgroupId=in.civiledu -DartifactId=01-Maven-App-CivilEdu -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+============================================
+How to create web application using Maven:
+============================================
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=in.civiledu -DartifactId=01-Maven-WebApp-CivilEdu -DinteractiveMode=false
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________________
+
+													By
+												Kastro Kiran V

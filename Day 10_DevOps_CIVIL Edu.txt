@@ -1,0 +1,81 @@
+########################################################################################
+										DevOps - Day 10
+########################################################################################
+MAVEN Goals:
+--------------------------------
+.java ... .class
+.class ... package (jar/war)
+package ... deploy
+
+~ To perform project build activities, maven provides several goals known as Maven Goals.
+~ Maven Goals: 
+	Clean
+	Compile
+	Test
+	Package
+	Install
+~ Java Project (Using Maven) ---- Compile the project (.java files) ----- .class files
+
+~ If you want to delete the old .java files and wants to create new .java files using Maven; then we will use a goal known as "clean" 
+App ---- Jan 2022 (1.1.0) ---- .java files
+August 2022 .... Client .... Modifications
+New .java files ----
+
+~.java files has to be converted to the .class files, we will use "compile" goal.
+
+~ To test the .class files for bugs, we will use "test" goal.
+
+~ We then have to package the files as a jar or war file, we will use "package" goal.
+
+~ All the maven goals has to be executed by going inside the folder structure (or) All the maven goals has to be executed in whichever path the pom.xml file is available
+
+~ Every goal that we execute in the Maven is associated with a plug-in.
+
+~ Whenever we use the "compile" goal, a new folder which is called as "target" will be created.
+
+~ In the "main" folder .java files will be there.
+
+~ In the "target" folder .class files will be there.
+
+~ To install our project as a dependency in our local repo. (.m2 folder) we will use "install" goal
+
+
+How to create a web application?
+----------------------------------------------------
+
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=in.civiledu -DartifactId=01-Maven-WebApp-CivilEdu -DinteractiveMode=false
+
+
+
+
+
+
+
+_________________________________________________________________________________________
+								
+													By
+												Kastro Kiran V
+
+============================================
+How to create standalone application using Maven:
+============================================
+mvn archetype:generate -DgroupId=in.civiledu -DartifactId=01-Maven-App-CivilEdu -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+============================================
+How to create web application using Maven:
+============================================
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=in.civiledu -DartifactId=01-Maven-WebApp-CivilEdu -DinteractiveMode=false
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________________
+
+													By
+												Kastro Kiran V
