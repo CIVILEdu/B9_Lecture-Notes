@@ -1,0 +1,86 @@
+########################################################################################
+										DevOps - Day 12
+########################################################################################
+GIT & GITHUB:
++++++++++++++++++
+How to check whether GIT is configured with email and username?
+------------------------------------------------------------------------------------------------
+To know the user name ----> git config user.name
+To know the Email ----> git config user.email
+
+How to initialize the GIT?
+--------------------------------------
+git init
+
+~ After executing the above command, ".git" folder will get created in the same path as you have opened the GIT terminal.
+
+~ By default the ".git" folder is a a hidden folder.
+
+How to create a repository in the GITHUB?
+---------------------------------------------------------------
+In GITHUB we will have two types of repo.s:
+	1. Public Repo.; which can be accessed by anybody on the internet
+	2. Private Repo; which can be accessed by the permitted people
+
+Goto GITHUB ----> Click on "New" ----> Repo. Name:______, Select "Public" ----> Click on Create Repo.
+
+How to "Clone" the Central repo. available in GITHUB to the local machine (PC)?
+----------------------------------------------------------------------------------------------------------------
+git clone <Repo.URL>
+
+Every file in git will have 3 types of status:
+	1. Staged files - Green color
+	2. Tracked files  Green color
+	3. Untracked files - Red colour
+
+To know the status of a file/repo.
+	git status
+
+
+Summary:
+--------------------
+1. Created empty repo in github
+2. Clone the empty repo. from github to the local machine
+	git clone <repo.URL>
+3. Created an empty text document in the cloned epo.
+	touch <filename>
+4. Check the status of the file
+	git status (red colour)
+5. Add the file to the staging area. 
+	git add .
+		Now the file is being tracked by the git
+6. To know whether a file is being tracked by git or not
+	git status (green color)
+7. Commit the file
+	git commit -m "my first commit"
+8. Push the file to the central repo. (GITHUB)
+	git push
+
+How to unstage a staged file?
+-----------------------------------------
+git restore --stage <filename>
+
+Note:
+---------
+"restore" command will work in 2 ways:
+	1. When the file is staged, "restore" command will unstage the file
+	2. When the file is unstaged "restore" command will removes the changes in the file.
+
+We can call "restore" command as a Polymorphic command
+
+How to add a specific file to the staging area?
+--------------------------------------------------------------------
+git add . ----> All the files will be added to the staging area.
+
+git add <filename> -----> To add a specific file to the staging area.
+
+How to see the commit history?
+----------------------------------------------
+git log
+
+
+
+________________________________________________________________________________________
+
+													By
+												Kastro Kiran V

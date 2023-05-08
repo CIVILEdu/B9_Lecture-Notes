@@ -1,0 +1,112 @@
+########################################################################################
+										DevOps - Day 11
+########################################################################################
+GIT & GITHUB:
++++++++++++++++++
+~ GIT is a Version Control System or Source Code Management tool.
+
+~ GIT is developed by Linus Torvalds. He created the GIT for the development of Linux Kernal.
+
+~ GIT tracks all the types of files and codes.
+
+~ The idea of using the VCS is to keep the developers in touch with eachother to check the compatibility of their code with other developers.
+
+~ VCS is a system that keeps the records of our changes in a special DB known as "Repository"
+
+~ VCS is able to track the changes that you made to the code on daily basis.
+
+~ VCS also allows us for collaborative development.
+
+~ VCS also helps us to go to the previous version of the code.
+
+Types of VCS
+-----------------------
+1. Local VCS
+2. Centralized VCS
+3. Distributed VCS
+
+~ Developers and DevOps engineers mostly use DVCS
+
+DVCS available in the market
+-----------------------------------------------
+GIT
+BIT Bucket
+Subversion
+Mercurial
+Perforce
+
+~ GITHUB is a central repository where the developers and devops engineers are connected.
+
+~ GITHUB will act as a Host for our code.
+
+How GIT works?
+--------------------------
+There are 3 main states of GIT:
+1. Working directory
+2. Staging area
+3. Repository area
+
+~ GIT is just a tool.
+
+~ 3 types of GIT: GIT, GITHUB, GITLAB
+
+GIT Vs. GITHUB
+---------------------------
+GIT:
+~ GIT is a DVCS which runs locally in our PC
+~ We dont need to have GIT account, instead we have to install the GIT client s/w
+~ We dont need internet connection to work with GIT
+~ Git is a software.
+~ Git is a command-line tool
+~ Git is installed locally on the system
+~ Git is maintained by Linux.
+~ Git is open-source licensed.
+
+GITHUB:
+~ GITHUB is central repo. where all the developers and devops engineers are connected with each other
+~ We need to create GITHUB Account
+~ We need internet connection to work with GITHUB
+~ GitHub is a service.
+~ GitHub is a graphical user interface.
+~ GitHub is hosted on the web
+~ GitHub is maintained by Microsoft.
+~ GitHub includes a free tier and a pay-for-use tier.
+
+
+Installation of GIT:
+-----------------------------
+https://git-scm.com/
+To check whether GIT is available in our machine (PC) 
+	Open command prompt and execute the below command
+		git --version
+
+How to create the GITHUB Account?
+------------------------------------------------------
+https://github.com/
+
+How to configure the GIT?
+----------------------------------------
+~ VCS which tracks the changes we make to the code.
+~ To configure GIT we need email id and user name
+~ GIT configuration can be done at 3 different levels:
+	1. System level: The settings here applies for all the users of the current computer.
+	2. Local level:  The settings here applies to the current repo. in the current folder.
+	3. Global level: The settings here applies to all repo. of the current user.
+
+
+Configuration of username:
+	git config --global user.name <username>
+
+Configuration of email:
+	git config --global user.email <useremail>
+
+How to remove username and email id:
+------------------------------------------------------------
+git config --global --unset user.name <username>
+
+git config --global --unset user.email <useremail>
+
+________________________________________________________________________________________
+
+													By
+												Kastro Kiran V

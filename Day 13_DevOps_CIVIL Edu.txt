@@ -1,0 +1,36 @@
+########################################################################################
+										DevOps - Day 13
+########################################################################################
+GIT & GITHUB:
++++++++++++++++++
+How to commit/push Maven Project to GITHUB Repo?
+-----------------------------------------------------------------------------
+1. Create a Maven Project (which is already created during Maven classes) in your local machine
+2. Create a Repo. in GITHUB
+
+
+GIT STASH
+----------------------
+
+git stash
+git stash apply
+git stash list
+git stash apply <stashid>
+
+GIT BRANCHES
+------------------------------
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________________
+
+													By
+												Kastro Kiran V
