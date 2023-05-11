@@ -1,0 +1,183 @@
+########################################################################################
+										DevOps - Day 16
+########################################################################################
+APACHE TOMCAT - Web Server
+--------------------------------------------------
+~ To deploy any application, we need a VM. 
+
+~ If you want to deploy the JAVA WEB APPLICATION, we need a web server. The web server available to deploy java web application is APACHE TOMCAT.
+
+~ First we will launch the EC2 Instance, in that Instance we will install a Web Server (Tomcat). In the webserver, we will deploy the "war" file. This process is called as Deployment.
+
+~ For java web applications, we will use below servers: Apache Tomcat, Weblogic, Websphere, JBOSS ....
+
+~ Deployment of war file can be made in two ways: 1. Manual Deployment 2. Automated Deployment (JENKINS)
+
+Manual Deployment of "war" file into the Tomcat Webserver:
+-------------------------------------------------------------------------------------
+~ JAVA Web Applications - WAR Files
+
+~ For Stand-alone Applications - JAR Files
+
+~ Apache is the name of the Organization. Tomcat is the name of Web Server. 
+
+~ Tomcat is an Open Source - FREE. 
+
+~ Tomcat Server runs on Port No. 8080, by default.
+
+Downloading the Apache Tomcat
+---------------------------------------------------
+Apache Tomcat ----> https://tomcat.apache.org/ ----> Download ----> Click on Tomcat 9 ----> Download the ZIP File ----> Extract the Zip File, to see the folder structure.
+
+Folder structure of Apache Tomcat
+------------------------------------------------
+BIN Folder - It contains files which are required to start and stop the server
+			For Windows OS, we will use .bat files
+				startup.bat (To start the webserver)
+				shutdown.bat (To shutdown the webserver)
+			For Linux OS, we will use .sh files
+				startup.sh (To start the webserver)
+				shutdown.sh (To shutdown the webserver)
+
+CONF Folder - It contains Configuration files
+				server.xml ------  This file is used to configure Tomcat Port No. (8080)
+				tomcat-users.xml ------ This file is used to configure the User Details.
+
+LIB Folder - It contains Libraries - jar files
+
+TEMP Folder - It contains temporary data
+
+WEBAPPS Folder - We will keep our application "war" files. This folder is called as "Deployment" folder. Since we are going to deploy the "war" file of our application, it called as "Deployment" folder.
+
+LOGS Folder - It contains the server logs i.e execution details
+
+~ Developers will develop the source code of the web application and it is then pushed into the Central repo. (GITHUB). Once the code is pushed into the Central Repo., as a DevOps Engineer, we will clone that repo and we are going to package the project as a "war" file. This "war" file we are going to keep in WEBAPPS folder of Tomcat.
+
+~ We can keep multiple war files in webapps folder but it is not suggested.
+
+Working with TOMCAT Server in Linux OS
+--------------------------------------------------------------------
+~ Launch the Linux based VM
+~ Connect to the Instance
+~ Install Java Software:
+	To install Java 11 on Amazon Linux:
+	sudo amazon-linux-extras install java-openjdk11
+
+	To install Java 08 on Amazon Linux:
+	sudo yum install java-1.8.0-openjdk
+~ Check the Java Version:
+	java -version
+
+Installation of Tomcat Web Server in Linux based VM
+----------------------------------------------------------------------------
+~ Since the VM is Linux based OS, we will install the "tar" file of Apache Tomcat Web Server
+		https://tomcat.apache.org/download-90.cgi
+~ Keep the cursor on tar.gz file and right click and select Copy link address
+~ To install the Webserver: wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.73/bin/apache-tomcat-9.0.73.tar.gz (Tar file of Apache Tomcat will get installed)
+~ Extract the tar file
+	tar -xvf <Name visibile in the red colour in the above link>
+	ls -l (You can see the extracted file in blue clolor)
+~ cd <Enter the name visibile in blue colour in above line>
+	ls -l (To see the folder structure)
+
+Starting the Tomcat Sever
+------------------------------------------
+~ To start the server, we need to access the startup.sh file. This file is available in BIN Folder
+~ cd bin/
+~ To start the sever, 
+	./startup.sh (You can see "Tomcat Started")
+
+Accessing Tomcat Server
+--------------------------------------
+~ Copy the Public IP of EC2 Instance and paste in new tab ---- You can see the error page. This is because, the port no. 8080 is not enabled.
+
+~ Enable Port No. 8080 in SGs of EC2 Instance.
+
+~ After enabling the port no 8080, go to new tab,
+		<Paste the public IP of instance>:8080/ -----------You can see tomcat server page
+
+Deploy the Web Application in Tomcat Server
+---------------------------------------------------------------
+The war file has to be deployed in the WEBAPPS Folder
+
+Goto 02-Maven-WebApp-CivilEdu -----> Open Command Prompt in that path ----> Lets package the project -----> mvn clean package -----> You can see Build Success ----> You can see the war file in target folder
+
+Since we are accessing the Tomcat in our PC, we can only access the HOME PAGE of TOMCAT. We cannot perform the Admin activities from our PC.
+To perform the admin activities from our PC, we need to edit the "context.xml" file
+
+Editing the context.xml to give the Admin permissions
+------------------------------------------------------------------------------
+File path of context.xml:
+	tomcat/webapss/manager/META-INF/context.xml
+
+vi context.xml ----> Edit the allow tag -----> ".*" />
+
+Configuring the Users in Tomcat
+---------------------------------------------
+we need to edit the tomcat-users.xml to configure the users. 
+The "tomcat-users.xml" file is available in "conf" folder
+
+<role rolename="manager-gui" />
+<user username="tomcat" password="tomcat" roles="manager-gui" />
+<role rolename="admin-gui" />  
+<user username="admin" password="admin" roles="manager-gui,admin-gui"/>
+
+Click on Server Status ----> Enter the username (admin) and password (admin)
+
+Deploying the "war" file of our application
+------------------------------------------------------------
+Scroll down to see "War file to deploy" -----> Click on Choose File ----> Select the war file from our PC ----> Click on "Deploy" 
+You can see our application under "List Applications"
+
+Click on the Application Name (02-Maven-WebApp-CivilEdu) -----> You will be able to see the HELLO WORLD!
+
+Note: HELLO WORLD! is seen because it is available in index.jsp file which is there in "target folder"
+
+
+This is all about the Manual Deployment.
+
+_________________________________________________________________________________________
+
+From the next session onwards, we will do the Automated Deployment process by using JENKINS Tool.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________________
+								
+													By
+												Kastro Kiran V
+
+
+

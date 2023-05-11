@@ -1,0 +1,48 @@
+########################################################################################
+										DevOps - Day 15
+########################################################################################
+ENVIRONMENT:
++++++++++++++++++
+~ The platform which is used to run an application is known as Environment.
+
+~ In real-time we will have multiple environments to run a single application.
+
+~ Types of Environments: Dev, SIT, UAT, Pilot, Prod, Release
+
+~ Developers will use Dev environment for integration testing.
+
+~ The process of testing the code in developer system is called as "Unit Testing"
+
+~ Once the code is tested by individual developers in their PC, developers will then push the code GITHUB.
+
+~ In GIT Repo we will maintain multiple branches like main, develop, feature, SIT, UAT, Release. Here each branch will act as a separate code base.
+
+~ System Integration Testing - SIT
+
+~ Testing team will identify the bugs in the code/project and if there are any bugs they will be reported to the developers using a tool called as JIRA
+
+~ User Acceptance Testing - UAT
+
+~ UAT environment will be used by the client
+
+~ To automate the deployment process we will use a tool known as JENKINS
+
+~ JENKINS is a deployments automation s/w
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________________
+
+													By
+												Kastro Kiran V
