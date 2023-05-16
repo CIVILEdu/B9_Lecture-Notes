@@ -1,0 +1,165 @@
+########################################################################################
+										DevOps - Day 17
+########################################################################################
+===============
+JENKINS
+===============
+~ JENKINS is an Open Source Software.
+
+~ JENKINS is an Automation Tool.
+
+~ JENKINS is used for CI&CD (Continuos Integration and Continuos Delivery)
+
+~ JENKINS is developed by using JAVA Software. It is a part of Hudson Project.
+
+~ Developers will write the code for the project and that code will be available in the Central Repo. As a DevOps Engineers, we are going to take the code from Repo. and it will be deployed into the servers, for this process we will use a tool called as JENKINS.
+
+What is CI & CD?
+------------------------------
+~ CI - Continuos Integration - Builds and Tests Run.
+
+~ Jenkins is a CI-CD software. It is a self-contained, open-source automation server which can be used to automate all sorts of tasks (Building, Testing, Delivering and Deployment)
+
+~ Using Jenkins we will do the Build and Deployment process.
+
+Build and Deployment process
+------------------------------------------------
+Step 1: Take the latest code for repo.
+Step 2: Compile source code.
+Step 3: Unit test execution (J-Unit)
+Step 4: Perform Code Review
+Step 5: Package the code (WAR File)
+Step 6: Deployment of WAR file into the server
+
+All the above steps can be automated using JENKINS
+
+Installation of Jenkins on EC2 Instance:
+----------------------------------------------------------
+***********
+   Part 1
+***********
+1. Launch and Connect to the Instance using MobaXTerm
+2. Become Root User
+	sudo su
+	cd (You will see only IP of Instance)
+	sudo yum update -y		
+
+
+***********
+   Part 2
+***********
+https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
+
+3. Add Jenkins repo. to our YUM repo:
+	sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+4. Import a key-file from Jenkins-CI to enable the installation from package:
+	sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+	sudo yum upgrade
+
+***********
+    Part 3
+***********
+5. Installing Java
+	sudo amazon-linux-extras install java-openjdk11 -y
+
+	java -version
+
+6. Install Jenkins:
+	sudo yum install jenkins -y
+
+7. Lets start, enable, and check the status of Jenkins 
+	sudo systemctl enable jenkins	
+	sudo systemctl start jenkins
+	sudo systemctl status jenkins
+		You should see Active & Running in Green Colour, which means the Jenkins Tool is successfully 				installed
+
+Note: 
+To remove jenkins: sudo yum remove jenkins
+
+***********
+   Part 4
+***********
+By default, the Jenkins tool will run on Port No. 8080
+Enable Port No. 8080 for the EC2 Instance inorder to access Jenkins Tool.
+Check Instance ----> Security ----> Click on link below the Security Group ----> Add Rule ----> Custom TCP, Port No. 8080 ----> Save Rules.
+
+Access Jenkins:
+
+	<public ip>:8080
+	cat <Paste the red code visible while accessing jenkins in browser> and execute in MobaXTerm
+	Copy the code visible in MobaXTerm and Paste in Notepad
+		8f39e64834e34e3ba2e6b0ef55695ea0
+			Paste the above code in Jenkins Browser under "Administrative Password"
+	Click on "Install Suggested Plugins"
+	Create First Admin User
+		Provide Username, Password, Full Name, and Email
+	Save and Continue
+	Copy the Jenkins URL and Paste in Notepad
+		http://3.135.249.138:8080/
+	Save and Finish
+	Start Using Jenkins
+		You will see Jenkins Console
+
+From now, we are going to create the JENKINS Jobs
+
+---------------------------------------------------------------------
+Lets create a simple job in Jenkins and run the job
+---------------------------------------------------------------------
+Jenkins Console ----> New Item ----> Enter Name of the Job ----> Select Free Style Project ----> OK ----> To Configure our Jenkins Job, we need to configure 6 steps (General, SCM, Build Triggers, Build Environment, Build Steps, Post-Build Action)
+
+If you want to build triggers periodically, we have to write the cron expression
+* * * * * * (Every minute the build will execute)
+H * * * * (Every Hour the build will execute)
+H/2 * * * * (Every Half-an-Hour the build will execute)
+
+
+/var/lib/jenkins/workspace/my-first-jenkins-job
+
+
+________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________________
+								
+													By
+												Kastro Kiran V
+
+
+
