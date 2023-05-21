@@ -1,0 +1,161 @@
+########################################################################################
+										DevOps - Day 27
+########################################################################################
+==================
+DOCKER FILE
+==================
+~ Docker file contains instructions to build a docker image.
+
+~ In Docker file we will use DSL (Domain Specific Language) Keywords.
+
+~ Docker engine will process docker file instructions from top to bottom
+
+Docker File Keywords:
+------------------
+1. FROM:
+------------------
+~ Every docker file starts with FROM keyword.
+~ It indicates the base image to run our applicaiton. On the top of base image, we will create our own images.
+~ Syntax: FROM <image-name>
+Ex: FROM ubuntu, FROM tomcat, FROM mysql
+~ We can configure morethan 1 base image, if required.
+~ Every new base image should be configured in a new line.
+Ex:
+FROM ubuntu 
+FROM tomcat
+FROM java
+FROM linux
+
+----------------------------
+2. MAINTAINER:
+----------------------------
+~ It represents who is the author of docker file.
+Ex: MAINTAINER <Author Name> <Author Email>
+MAINTAINER Kastro kastro@gmail.com
+
+----------------------------
+3. COPY:
+----------------------------
+~ It is used to copy files or folders to image while creating the image
+Ex: COPY <Source> <Destination>
+COPY target/mavenwebapp /user/local/tomcat
+
+----------------------------
+4. ADD:
+----------------------------
+~ It is also used to copy files or folders to image while creating the image
+~ ADD keyword download the files to image from remote location
+~ ADD keyword will extract tar file while copying to image
+Ex: ADD <Source> <Destination>  (or)   ADD <url to download> <Destination>
+
+----------------------------
+5. RUN:
+----------------------------
+~ It is used to execute the commands on the top of base image.
+~ RUN command instructions will execute while creating an image
+Ex: RUN mkdir civiledu
+RUN yum install git
+RUN yum install java
+
+----------------------------
+6. CMD:
+----------------------------
+~ It is also used to execute the commands.
+~ CMD instructions will execute while creating the container
+
+			Build					Run
+Docker file---------------Docker image-----------------Docker Container
+
+Note: Code should be downloaded when the image is creating
+	   Server should be created when the container is creating
+
+Ex: CMD sudo start tomcat
+
+Note:
+We can write multiple RUN instructions. They will be executed from top to bottom only.
+We can write multiple CMD instructions in docker file, but docker will process only the last CMD instruction. Hence there is no use of writing multiple CMD instructions in the docker file.
+
+Sample docker file:
+-----------------------------
+FROM ubuntu
+MAINTAINER civiledu
+RUN echo "Run One"
+RUN echo "Run Two"
+RUN echo "Run Three"
+CMD echo "CMD One"
+CMD echo "CMD Two"
+RUN echo "Run Four"
+
+
+
+Note:
+To build the image using docker file -------> docker build -t <imagename> .
+To run the docker image --------> docker run <imagename>
+To overwrite the CMD instructions ------> docker run <imagename> date (this will print only date and CMD will not execute)
+
+----------------------------
+7. ENTRYPOINT:
+----------------------------
+~ Entrypoint instructions will execute while creating the container.
+~ Entrypoint instructions cannot be overwritten but CMD instructions can be overwritten
+Ex: ENTRYPOINT ["echo","Welcome to CIVIL Edu"]
+
+----------------------------
+8. WORKDIR:
+----------------------------
+~ Using the "workdir" we can set the working directory for an image or a container
+Ex: WORKDIR <Directory-path>
+
+----------------------------
+9. ENV:
+----------------------------
+~ It is used to set the environment variables
+Ex: ENV <key> <value>
+
+----------------------------
+10. LABEL:
+----------------------------
+~ It is used to assign the metadata for our image.
+~ Labels will represent the data in the form of keyvalue pair.
+Ex: LABEL <branchname> release
+
+----------------------------
+11. ARG:
+----------------------------
+~ It is used to avoid the hardcoded values in docker file
+Ex: ARG branch=develop
+~ We can pass the arguement values in the RUNTIME also
+Ex: docker build -t imagefour --build-arg branch=develop
+
+----------------------------
+12. USER:
+----------------------------
+~ Using this we can set an username for an image or container.
+
+----------------------------
+13. EXPOSE:
+----------------------------
+~ It indicates on which port number our container is running
+
+----------------------------
+14. VOLUME:
+----------------------------
+~ It is used for data storage purpose or data mounting purpose.
+
+
+
+
+Dockarizing a web application
+------------------------------------------
+Repo. URL:
+https://github.com/CIVILEdu/Spring-Boot-Project_Docker.git
+
+Docker file name: dockerfile-one
+Image name:springimage
+________________________________________________________________________________________
+								
+													By
+												Kastro Kiran V
+
+
+

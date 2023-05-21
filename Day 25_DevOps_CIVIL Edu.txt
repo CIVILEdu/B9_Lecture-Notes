@@ -1,0 +1,45 @@
+########################################################################################
+										DevOps - Day 28
+########################################################################################
+
+docker ps ---- To display all the running containers
+docker ps -a ----- To display all the containers
+docker stop <container id> ----- To stop the container
+docker start <container id> ----- To start the container
+docker rm <container id> ----- To remove the container
+docker system prune -a ----- To remove the stopped container and unused docker images
+
+==================
+DOCKER VOLUMES
+==================
+~ Docker volumes are used to store the data.
+
+Docker Volume Commands:
+
+~ docker volume --help ------ To see the commands of docker volume
+~ docker volume ls  ------  To see the local volumes
+~ docker volume prune  ------ To delete all the unused volumes
+~ docker volume <volume-name> ------- To create a docker volume
+~ docker volume inspect <volume-name>  ------ To know the details of a docker volume
+~ docker volume rm <volume-name>  ------ To remove the docker volume
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________________
+								
+													By
+												Kastro Kiran V
+
+
+

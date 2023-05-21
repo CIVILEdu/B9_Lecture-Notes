@@ -1,0 +1,55 @@
+########################################################################################
+										DevOps - Day 26
+########################################################################################
+==================
+DOCKER
+==================
+~ Docker Hub is the place where all the Docker Images are stored.
+
+~ Docker Pull and Docker Push are the commands which are used to Pull the images from Docker Hub and also to Push the images to Docker Hub.
+
+~ Whenever a Docker Image is created, for every image an Image ID will be generated.
+
+Docker Commands:
+-----------------------------
+~ docker run <image-id> (or) docker run <image name> -----> Used to run the docker image
+
+~ docker pull <image-id> ------> Used to Pull the docker image from Docker Hub
+
+~ docker push <image-id> ------> Used to Push the docker image to the Docker Hub
+
+~ docker build ----> Used to create a Docker Image
+
+~ docker rmi <image-id> -----> Used to remove the docker image
+
+~ docker tag ------> Used to tag a docker image
+
+~ docker ps -----> Used to the list of docker containers
+
+~ Two types of Docker Registry: 
+	1. Public Registry - Docker Hub
+	2. Private Registry - Nexus, JFrog, ECR - Elastic Container Registry
+
+===============================================================
+How to create a docker image and how to store the docker image in Docker Hub?
+===============================================================
+~ To create a docker image, we need to create a docker file. In orderto create a docker file we need to work with the docker commands.
+
+~ If you want to push the docker image to docker hub, we need to connect/login to docker hub account.
+
+~ Now we have to create a docker file, then only we will be able to build the docker image. Once the docker image is ready, we have to store the docker image in the docker hub. Then we can run the docker image, then the docker container will start.
+
+				Build						      Push
+Docker File ---------------------- Docker Image ---------------------- Docker Hub -------- VM 1, VM 2, VM 3.....
+
+
+
+
+
+________________________________________________________________________________________
+								
+													By
+												Kastro Kiran V
+
+
+

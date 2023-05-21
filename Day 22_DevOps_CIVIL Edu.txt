@@ -1,0 +1,119 @@
+########################################################################################
+										DevOps - Day 25
+########################################################################################
+==================
+DOCKER
+==================
+~ Whenever we are developing any application, we will have several components.
+
+~ In any software project we will have 3 major components:
+	1. Front End Component
+	2. Back End Component
+	3. DataBase Component
+
+~ For any project we need to use a programming language in order to develop the project and in the Back End Component we will have 3 other components:
+	1. Web Components
+	2. Business Components
+	3. Persistant Components - is responsible to communicate with the DB Component.
+
+~ To develop the application, for frontend we can use HTML, CSS, Bootsrap.....
+~ In the backend, we will use Java, Springboot, Hibernate....
+~ For DBs, we will use Oracle DB, My SQL DB, SQL DB, NO SQL DB....
+
+~ Once the project development is completed, developers are going to store/push the code in to the GITHUB Repo.
+
+~ As a DevOps engineers, we are going to deploy that code into the VMs. These VMs are called Environments.
+Dev Envi - Developers - Java 1.8
+SIT Envi - SIT Operations - Java 10
+UAT Envi - Client - Java 10
+Pilot Envi - Testing the project - Java 11
+Prod Envi - To release the project for LIVE
+
+~ So when the configurations of the s/w are different in each envi., it is a challenging task to run our application. In this case we need to switch to one common platform where we can run applications easily eventhough the versions of the s/w are different in each environment.
+
+~ DOCKER
+
+~ Docker will prepare the environments which are required to run our applications.
+
+~ Docker is PaaS type model (Platform as a Service)
+
+~ It uses OS-level virtualization concept to deliver software in packages known as "Containers"
+
+~ Before Docker, we used to work on virtualization concept.
+
+~ Whenever we use Docker, we dont need to install the Guest OS. Instead, we will install "Docker Engine" to run our application.
+
+~ Docker will create a container to run our Application. For each application type, a separate container will be created.
+
+~ For ex, if you want to 5 applications in VM, you can execute 5 docker containers to run our application in one VM only. This is called as "Containarization Concept"
+
+Containarization Concept
+---------------------------------------------
+~ It is used to package all the s/w and application related code in one container for execution purpose.
+~ Containers will takcare of everything which are required to run our application.
+~ We can run the containers in multiple machines (VMs)
+~ Docker is a containarization s/w.
+~ Using Docker s/w we will create a container to execute/run our application.
+~ Using Docker we can shift the containers from one VM to another VM.
+
+~ Your complete project will be packaged as a Docker Container.
+
+~ The software which hosts the Containers is called as "Docker Engine/Docker Daemon"
+
+~ Docker is FREE and it is also for the price.
+
+=========================
+DOCKER ARCHITECTURE
+=========================
+Docker File: 
+------------------------
+~ In this file, we will write all the configuration which are required to setup our application. It actually works like an Input file for Docker s/w.
+~ For every application we will create a Docker File.
+~ Docker File contains the information which is required for our project.
+~ Once the Docker File is build, a Docker Image will be created.
+~ Once the Docker Image is created, we will run the Docker Images then Docker Container will start.
+~ Docker Containers consist of every details of our project. This container will then executed/deployed in an EC2 Instance (VM)
+~ In Docker File we will specify what version of s/w are required and which specific s/w are required.
+~ The Docker Images will be stored in a repo. known as Docker Hub.
+
+=========================
+DOCKER TERMINOLOGY
+=========================
+1. Docker File - contains instructions/configuration required for our application to create an image.
+2. Docker Image - contains App. code, Softwares, Envi., Libraries
+3. Docker Hub - it contains docker images. Its a centralized location.
+4. Docker Registery - here we can store the images.
+5. Docker Client - whenever we execute any docker command, docker client will start and it will interact with docker engine and then it will execute the docker commands.
+6. Docker Engine/Docker Daemon: All the docker commands will execute here. It is a s/w in which we will create docker images and docker containers.
+
+Whenever the docker image will run, then docker container will start.
+
+=========================
+DOCKER SETUP IN VM
+=========================
+Create an EC2 Instance and Connect to it using MobaXTerm s/w.
+
+docker info ----> You will see "Command Not Found", because the Docker is not yet installed.
+sudo yum install docker -y  ----> To install Docker
+docker -v ----> To check the docker version
+sudo service docker start ----> To start the docker s/w
+docker info ---->  You will not see "Command Not Found" but you will see "Permission Denied" because ec2-user will not have the permission to execute docker commands, by default.
+sudo usermod -aG docker ec2-user ----> To add user to docker group 
+docker info ---->  You will not see "Command Not Found" but you will see "Permission Denied" because ec2-user will not have the permission to execute docker commands, by default.
+Type exit and click R on keyboard to restart.
+
+login as: ec2-user
+docker info ---->  You will see the docker related information.
+docker images ----> To see the list of docker images
+docker pull hello-world ----> To pull the default docker image
+docker help ----> To see the list of docker commands
+docker login ----> To connect to the Docker Registry using VM
+
+
+________________________________________________________________________________________
+								
+													By
+												Kastro Kiran V
+
+
+
